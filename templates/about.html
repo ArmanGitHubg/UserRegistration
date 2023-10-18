@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock title %}
+
+{% block content %}
+<h1 class="has-text-centered mb-5 is-size-3" style="color:violet">About page</h1>
+
+    <div class="field has-text-centered">
+        <p>Quality matters. Exactly this is the first introduction for myself. 
+            Professional behaviours comes to next. To achieve something There
+            no shortcut. It's the result of willingly consistant practice. 
+        </p>
+
+        <p>Thank You!</p>
+        <p>Arman Hossain</p>
+        <p>armankhaaa@gmail.com</p>
+        <p>Dubai, UAE</p> 
+        
+    </div>
+    
+    <div class="field has-text-centered">
+        <p class="field" > Go to home page
+            <a style="color:turquoise" href="{% url 'home' %}">home</a>
+        </p>
+    </div>
+
+{% endblock content %}

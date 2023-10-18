@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+<!--new form-->
+{% block content %}
+
+  <form method="POST" action="." class="box">
+    {% csrf_token %}
+
+    <h1 class="has-text-centered mb-5 is-size-3">Login</h1>
+
+    <div class="field">
+        {{ form.as_p }}
+    </div>
+
+    <div class="field">
+      <button class="button is-success" type="submit">
+        Login
+      </button>
+    </div>
+
+    <div class="field">
+      <a style= "color: tomato;" href="{% url 'account_reset_password' %}">Forgot password ?</a> 
+    </div>
+
+    <div class="field">
+      Need account ? <span style="color:tomato"><a href="{% url 'account_signup' %}">Signup</a> </span>
+    </div>
+  </form>
+          
+
+{% endblock content %}

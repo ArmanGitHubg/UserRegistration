@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock title %}
+
+{% block content %}
+<h1 class="has-text-centered mb-5 is-size-3">Welcome To Homepage</h1>
+{% if user.is_authenticated %}
+    <div class="field has-text-centered">
+        <h2 style="color:aqua">Welcome {{ user.username }}!</h2>
+    </div>
+    <div class="field">
+        <p>This is all about practice to make an 
+            user authentication and authorization aproach
+            using Django-allauth. There is coming next with
+            custom user and custom user manager using Django-allauth.
+        </p>
+    </div>
+    <div class="field has-text-centered">
+        <p class="field" >Like to visit about page?
+            <a style="color:turquoise" href="{% url 'about' %}">About</a>
+        </p>
+    </div>
+    
+    <!-- <div class="field has-text-centered">
+        <p class="field" style="color:turquoise"><a href="{% url 'account_logout' %}">Log Out</a></p>
+    </div> -->
+
+    <div class="field has-text-centered">
+        <p class="field" >Want to change your password? 
+            <a style="color:turquoise" href="{% url 'account_change_password' %}">Change password</a> |
+            <a style="color:turquoise" href="{% url 'account_logout' %}">Log Out</a>
+
+        </p>
+    </div>
+{% else %}
+    <div class="field has-text-centered">
+        <p>You are not logged in</p>
+    </div>
+    <div class="field has-text-centered" style="color:turquoise">
+        <p><a href="{% url 'account_login' %}">Log In</a> |
+        <a href="{% url 'account_signup' %}">Sign Up</a></p>
+    </div>
+{% endif %}
+
+{% endblock content %}
